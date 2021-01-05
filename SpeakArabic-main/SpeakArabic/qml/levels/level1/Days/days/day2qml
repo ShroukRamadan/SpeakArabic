@@ -1,0 +1,33 @@
+import QtQuick 2.0
+import Felgo 3.0
+
+// EMPTY SCENE
+
+Scene {
+
+    Text {
+        font.pixelSize: 50
+        text: "السبت"
+
+        color: "blue"
+
+        anchors.centerIn: parent
+    }
+    Column{
+    anchors.centerIn: parent
+    spacing: 20
+
+    GameButton{
+
+
+    text: "التالي"
+
+
+
+   }
+
+
+    }
+
+
+}
