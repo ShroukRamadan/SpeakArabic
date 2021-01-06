@@ -67,7 +67,7 @@ Scene {
 
     Audio{
     id:audio11
-    source:"../../../../../assets/snd/sounds/num1.mp3"
+    source:"../../../../../assets/snd/souunds/num1.mp3"
 
 
     }
