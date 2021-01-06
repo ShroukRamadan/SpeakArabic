@@ -58,7 +58,7 @@ Scene {
 
                     onClicked: {
 
-                        var Component =Qt.createComponent("");
+                        var Component =Qt.createComponent("levels/level2/Level2Game");
                             var window =Component.createObject(gameWindow);
                         selectlevel.visible=false
                         window.show
