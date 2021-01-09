@@ -35,7 +35,7 @@ GameWindow {
 
                     font.pixelSize: 150
                     font.family: efont.name
-                    text: qsTr("speak Arabic")
+                    text: qsTr("Speak Arabic")
 
                 }
 
