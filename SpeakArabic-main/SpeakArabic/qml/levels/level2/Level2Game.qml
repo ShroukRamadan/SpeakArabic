@@ -13,8 +13,7 @@ Scene {
 
     id:root
     visible: true
-    width: 640
-    height: 480
+
 
 
 
@@ -29,11 +28,7 @@ Scene {
          source: "../../../assets/Img-sound/sound/balloonPop-true.wav"
 
     }
-    Audio{
-     id:backgroundMusic
-      source:"../../../assets/Img-sound/sound/music.mp3"
 
-    }
 
 
 
@@ -42,32 +37,38 @@ Scene {
                 id: background
                 anchors.fill: parent.gameWindowAnchorItem
                 source: "../../../assets/Img-sound/simple-background-backgrounds-passion-simple-1-5c9b95c3a34f9.png"
+
+
+                IconButton{
+                   width:50
+                   height: 30
+
+                   icon: IconType.arrowleft
+                   onClicked: {
+                   var components = Qt.createComponent("Level2Base.qml")
+                     var window = components.createObject(gameWindow)
+                     root.visible = false
+                     window.show
+                     backgroundMusic.pause();
+                   }
+               }
+
             }
+
 
 
         Rectangle{
 
+           anchors.horizontalCenter: parent
+
+
 
             Row{
-                spacing: 100
+                spacing: 50
 
-               // Rectangle{
 
-                    //anchors.fill: parent.gameWindowAnchorItem
-                    IconButton{
-                       width:50
-                       height: 30
-                        icon: IconType.arrowleft
-                       onClicked: {
-                       var components = Qt.createComponent("Level2Base.qml")
-                         var window = components.createObject(gameWindow)
-                         root.visible = false
 
-                      window.show
-                        backgroundMusic.pause()
-                       }
-                   }
-               //}
+
 
                 Text{
                     id: scoreId
@@ -77,15 +78,24 @@ Scene {
                     text: "Score : " + score
                 }
 
+
                 Text{
-                    id: timeId
-                    color: "black"
-                    font.bold: true
-                    font.pixelSize: 30
-                    text: "time : " + time
+
+                     id: textid
+                     color: "black"
+                     font.bold: true
+                     font.pixelSize: 30
+                     text: " Chosse Letter 'أ' "
+
+
                 }
+
+
+
+
+
         }
-                Timer{
+               Timer{
                     id:balloon_timer
                     interval: 3000
                     running:true
@@ -94,8 +104,6 @@ Scene {
                     onTriggered: {
                     var object=Qt.createComponent("balloons.qml")
                         if (object.status === Component.Ready){
-                            backgroundMusic.play()
-                            time --
 
                             //root is the id of window
                             var t=object.createObject( root , {"x" :Math.random() *root.width ,"y" : 1000 })
@@ -139,42 +147,9 @@ Scene {
 
 
                    }
-        Timer{
-
-            id:resetTheGame
-            interval: 4000
-            running:true
-            repeat:true
-
-            onTriggered: {
-                if(time==0){
-                    backgroundMusic.restart()
-                    score.restart()
-                    time.restart()
-                    balloon_timer.restart()
-                    falseballoon_timer.restart()
-                    falseballoon2_timer.restart()
-
-
-
-                }
-
-
-            }
-
-
 
 
         }
-
-        }
-
-
-
-
-
-
-
-
 
 }
+
