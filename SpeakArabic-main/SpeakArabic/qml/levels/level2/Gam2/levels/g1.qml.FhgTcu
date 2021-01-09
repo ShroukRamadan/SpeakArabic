@@ -1,0 +1,94 @@
+import QtQuick 2.0
+import Felgo 3.0
+import QtMultimedia 5.12
+// EMPTY SCENE
+
+Scene {
+id:ss1
+
+
+Text {
+    id: name
+    text: qsTr ("اختر الاجابه الصحيحه عند سماع الصوت ")
+    anchors.horizontalCenter: parent.horizontalCenter
+    font.pixelSize: 60
+    color: "#191970"
+}
+Flow{
+
+    anchors.left:  parent.left
+    anchors.right:  parent.right
+    anchors.top:   parent.top
+    anchors.centerIn:   parent.horizontalCenter
+    anchors.margins:100
+GameButton{
+
+
+        text: " ث "
+
+}
+GameButton{
+
+
+        text: " ت "
+
+}
+GameButton{
+
+id:label
+        text: " ب "
+        onClicked: {
+        a1.start()
+        }
+
+}
+NumberAnimation{
+    id:a1
+
+loops: Animation.paused
+target: label
+property: "rotation"
+from: 0
+to:360
+duration: 1000
+
+
+
+}
+
+
+
+    IconButton {
+        width:30
+        height: 30
+       // Icon in default state
+       icon: IconType.microphoneslash
+       selectedIcon: IconType.microphone
+
+       onClicked: {
+            selectedIcon: IconType.microphone
+            audio7.play()
+       }
+
+
+
+    }
+
+
+
+
+
+    GameButton{
+        text: "Back"
+
+        onClicked: {
+
+            var component = Qt.createComponent("../Main.qml")
+            var window = component.createObject(gameWindow)
+            alphabet.visible = false
+            window.show
+        }
+    }
+}
+
+}

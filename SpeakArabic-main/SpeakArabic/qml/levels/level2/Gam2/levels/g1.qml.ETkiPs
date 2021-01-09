@@ -1,0 +1,76 @@
+import QtQuick 2.0
+import Felgo 3.0
+
+// EMPTY SCENE
+
+Scene {
+id:ss1
+Flow{
+
+    anchors.left:  parent.left
+    anchors.right:  parent.right
+    anchors.top:   parent.top
+    anchors.centerIn:   parent.horizontalCenter
+    anchors.margins:100
+GameButton{
+
+
+        text: " ث "
+
+}
+GameButton{
+
+
+        text: " ت "
+
+}
+GameButton{
+
+
+        text: " ب "
+
+}
+    RoundedImage {
+
+       radius: 20.0
+       width: 200
+       height: 200
+       fillMode: Image.PreserveAspectCrop
+       source: "../images/الحروف/اسد.jpg"
+}
+
+
+    IconButton {
+        width:30
+        height: 30
+       // Icon in default state
+       icon: IconType.microphoneslash
+       selectedIcon: IconType.microphone
+
+       onClicked: {
+            selectedIcon: IconType.microphone
+            asad.play()
+       }
+
+
+
+    }
+
+
+
+
+
+    GameButton{
+        text: "Back"
+
+        onClicked: {
+
+            var component = Qt.createComponent("../Main.qml")
+            var window = component.createObject(gameWindow)
+            alphabet.visible = false
+            window.show
+        }
+    }
+}
+
+}

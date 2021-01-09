@@ -1,0 +1,118 @@
+import QtQuick 2.0
+import Felgo 3.0
+
+// EMPTY SCENE
+
+Scene {
+Rectangle{
+    anchors.fill: parent.gameWindowAnchorItem
+    color: "#f0f8ff"
+    Image {
+        id:background
+        anchors.fill: parent
+        source: "../image/pngtree-children-s-day-outing-promotion-poster-image_227446.jpg"
+    }
+
+    Text {
+        id: name
+        text: qsTr ("اختر الاجابه الصحيحه عند سماع الصوت")
+        anchors.horizontalCenter: parent.horizontalCenter
+        font.pixelSize: 30
+        color: "black"
+    }
+    Flow{
+
+        anchors.left:  parent.left
+        anchors.right:  parent.right
+        anchors.top:   parent.top
+        anchors.centerIn:   parent.horizontalCenter
+        anchors.margins:100
+    GameButton{
+
+
+            text: "يناير"
+
+    }
+    GameButton{
+
+
+            text: "فبراير"
+
+    }
+    GameButton{
+
+    id:label
+            text: "مايو"
+            onClicked: {
+            a1.start()
+            }
+
+    }
+    NumberAnimation{
+        id:a1
+
+    loops: Animation.paused
+    target: label
+    property: "rotation"
+    from: 0
+    to:360
+    duration: 1000
+
+
+
+    }
+
+
+
+        IconButton {
+            width:30
+            height: 30
+           // Icon in default state
+           icon: IconType.microphoneslash
+           selectedIcon: IconType.microphone
+
+           onClicked: {
+                selectedIcon: IconType.microphone
+                audio3.play()
+           }
+
+
+
+        }
+
+
+        IconButton{
+
+            width:50
+            height: 30
+
+            icon: IconType.arrowleft
+            onClicked: {
+
+             var components = Qt.createComponent("../Main.qml")
+
+             var window = components.createObject(gameWindow)
+
+             selectlevel.visible = false
+
+             window.show
+
+            }
+       }
+
+
+       // GameButton{
+           // text: "Back"
+
+           // onClicked: {
+
+               // var component = Qt.createComponent("../Main.qml")
+              //  var window = component.createObject(gameWindow)
+              //  alphabet.visible = false
+              //  window.show
+     //       }
+      //  }
+    }
+
+}
+}
