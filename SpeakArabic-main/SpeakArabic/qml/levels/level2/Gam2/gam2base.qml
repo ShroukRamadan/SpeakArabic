@@ -9,25 +9,9 @@ import QtMultimedia 5.12
 
             id: rectangle
             anchors.fill: parent.gameWindowAnchorItem
-            color: "#E6E6FA"
+            color: "#f0f8ff"
 
-           // Text {
-             //   id: name
-              //  text: qsTr ("تدريبات")
-             //   anchors.horizontalCenter: parent.horizontalCenter
-              //  font.pixelSize: 60
-              //  color: "#191970"
-           // }
 
-            //Flow{
-
-                //spacing: 5
-               // layoutDirection: Qt.RightToLeft
-
-               // anchors.left:  parent.left
-               // anchors.right:  parent.right
-               // anchors.top:   parent.top
-               // anchors.margins:150
             IconButton{
 
 
@@ -58,13 +42,14 @@ import QtMultimedia 5.12
                   }
             Column{
                 anchors.horizontalCenter: parent.horizontalCenter
-                spacing: 10
+                spacing: 20
                 Text {
                     id: name
                     text: qsTr ("exercise")
+                    font.pixelSize: 40
                    // anchors.horizontalCenter: parent.horizontalCenter
-                    font.pixelSize: 50
-                    color: "#191970"
+
+                    //color: "#191970"
                 }
                 GameButton{
                     width:170
@@ -161,6 +146,8 @@ import QtMultimedia 5.12
             }
 
      }
+
+
 
 
 
