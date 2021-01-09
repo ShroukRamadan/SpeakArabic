@@ -5,18 +5,37 @@ import QtMultimedia 5.12
 
 Scene {
 id:ss1
+
 Image {
     id:background
     anchors.fill: parent.gameWindowAnchorItem
     source: "../image/pngtree-children-s-day-outing-promotion-poster-image_227446.jpg"
 }
 
-Text {
-    id: name
-    text: qsTr ("اختر الاجابه الصحيحه عند سماع الصوت")
+Row{
+
+    spacing: 10
+
     anchors.horizontalCenter: parent.horizontalCenter
-    font.pixelSize: 30
-    color: "black"
+
+    Text {
+        id: t
+        text: qsTr ("Choose the correct answer after hearing the sound ")
+        font.pixelSize: 10
+        color: "black"
+    }
+
+
+    Text {
+        id: name
+        text: qsTr ("اختر الاجابه الصحيحه بعد سماع الصوت")
+        font.pixelSize: 10
+        color: "black"
+    }
+
+
+
+
 }
 Flow{
 
@@ -106,6 +125,9 @@ duration: 1000
             audio4.pause()
         }
     }
+}
+
+
 }
 
 
