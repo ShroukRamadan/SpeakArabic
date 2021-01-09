@@ -13,12 +13,30 @@ Scene {
         source: "../image/pngtree-children-s-day-outing-promotion-poster-image_227446.jpg"
     }
 
-    Text {
-        id: name
-        text: qsTr ("اختر الاجابه الصحيحه عند سماع الصوت")
+    Row{
+
+        spacing: 10
+
         anchors.horizontalCenter: parent.horizontalCenter
-        font.pixelSize: 30
-        color: "black"
+
+        Text {
+            id: t
+            text: qsTr ("Choose the correct answer after hearing the sound ")
+            font.pixelSize: 10
+            color: "black"
+        }
+
+
+        Text {
+            id: name
+            text: qsTr ("اختر الاجابه الصحيحه بعد سماع الصوت")
+            font.pixelSize: 10
+            color: "black"
+        }
+
+
+
+
     }
     Flow{
 
@@ -114,3 +132,4 @@ width: 30
 
 
 }
+
