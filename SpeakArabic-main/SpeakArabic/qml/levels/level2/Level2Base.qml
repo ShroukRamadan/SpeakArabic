@@ -1,10 +1,17 @@
 import QtQuick 2.0
 import Felgo 3.0
+import QtMultimedia 5.12
 
 // EMPTY SCENE
 
 Scene {
     id:level2Base
+
+    Audio{
+     id:backgroundMusic
+      source:"../../../assets/Img-sound/sound/music.mp3"
+
+    }
 
     Rectangle{
 
@@ -48,6 +55,7 @@ Scene {
                         var w =c.createObject(gameWindow)
                     level2Base.visible=false
                     w.show
+                    backgroundMusic.play();
 
                 }
             }
