@@ -19,6 +19,8 @@ GameWindow {
 
 
 
+
+
             FontLoader {
                 id: efont;
                 name: "Freestyle Script"
@@ -29,7 +31,7 @@ GameWindow {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
 
-                spacing: 20
+                spacing: 10
                 Text {
                     id: textElement
 
@@ -41,6 +43,7 @@ GameWindow {
 
                 AppButton{
                     text: "play"
+                    textSize: 30
                     anchors.horizontalCenter: parent.horizontalCenter
                     onClicked: {
                         var Component =Qt.createComponent("selectlevel.qml");
@@ -51,7 +54,18 @@ GameWindow {
                     }
 
                 }//end AppButton
+
+                AppButton{
+                    text: "Exit"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    textSize: 30
+
+                    onClicked: Qt.quit();
+
+                }
+
             }
+
 
 
 
